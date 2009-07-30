@@ -1,6 +1,6 @@
 set :application, "date"
   set :user, "app"
-  set :use_sudo, true
+  set :use_sudo, false
 
   set :repository,  "git@github.com:mathgraph/date_night_out.git"
   set :deploy_to, "/var/www/#{application}"
@@ -43,19 +43,19 @@ set :application, "date"
     desc "Stop the delayed_job process"
     task :stop, :roles => :app do
       run "cd #{current_path};"
-      run "/etc/init.d/delayed_job stop -e #{rails_env}"
+      run "#{sudo} /etc/init.d/delayed_job stop -e #{rails_env}"
     end
   
     desc "Start the delayed_job process"
     task :start, :roles => :app do
       run "cd #{current_path};"
-      run "/etc/init.d/delayed_job start -e #{rails_env}"
+      run "#{sudo} /etc/init.d/delayed_job start -e #{rails_env}"
     end
   
     desc "Restart the delayed_job process"
     task :restart, :roles => :app do
       run "cd #{current_path};"
-      run "/etc/init.d/delayed_job restart -e #{rails_env}"
+      run "#{sudo} /etc/init.d/delayed_job restart -e #{rails_env}"
     end
   end
 
