@@ -1,0 +1,15 @@
+.DS_Store
+log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+doc/api
+doc/app
+log/*.pid
+log/call_*
+db/schema.rb
+db/*.bkp
+*.swp
+*~
+index/**/*
+devel/**/*

@@ -1,0 +1,102 @@
+en:
+  hello_world: "Hello World!"
+  site_title: "Date Night Out"
+  activerecord:
+    errors:
+      messages:
+        inclusion: "is not included in the list"
+        exclusion: "is reserved"
+        invalid: "is invalid"
+        confirmation: "doesn't match confirmation"
+        accepted: "must be accepted"
+        empty: "can't be empty"
+        blank: "can't be blank"
+        too_long: "is too long (maximum is {{count}} characters)"
+        too_short: "is too short (minimum is {{count}} characters)"
+        wrong_length: "is the wrong length (should be {{count}} characters)"
+        taken: "has already been taken"
+        not_a_number: "is not a number"
+        greater_than: "must be greater than {{count}}"
+        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+        equal_to: "must be equal to {{count}}"
+        less_than: "must be less than {{count}}"
+        less_than_or_equal_to: "must be less than or equal to {{count}}"
+        odd: "must be odd"
+        even: "must be even"
+      template:
+        header:
+          one:    "1 error prohibited this {{model}} from being saved"
+          other:  "{{count}} errors prohibited this {{model}} from being saved"
+        # The variable :count is also available
+        body: "There were problems with the following fields:"
+  # site wide
+  hours : "hours"
+  hour : "hour"
+  hour_short : "hr"
+  hours_short : "hrs"
+  minute : "minute"
+  minutes : "minutes"
+  minutes_short : "min"
+  day : "day"
+  days : "days"
+  New : "New"
+  new : "new"
+  # site wide navigation
+  home : "Home"
+  search : "search"
+  quick_search : "Quick Search"
+  # user/account stuff
+  account_activated : "{{login}}, your account has been activated.  Welcome aboard!"
+  account_activation_url_message : "Visit this url to activate your account:"
+  account_created : "Your account has been created."
+  activation_complete_email_subject : 'Your account has been activated!'
+  activation_required_email_subject : 'Please activate your new account'
+  blank_activation_code : "The activation code was missing.  Please follow the URL from your email."
+  bogus_activation_code : "We couldn't find a {{model}} with that activation code -- check your email? Or maybe you've already activated -- try signing in."
+  create_account : "Create account"
+  email : "Email"
+  log_in : "Log In"
+  log_out : "Log Out"
+  logged_in : "Logged in successfully"
+  logged_in_as : "Logged in as {{login}}"
+  logged_out : "You have been logged out."
+  login : "Login"
+  logout : "Logout"
+  login_failed : "Couldn't log you in as {{login}}"
+  login_missing: "You have to at least type in a login!"
+  new_user_sign_up : "Sign up as a new user"
+  not_logged_in : "Not logged in"
+  password : "Password"
+  password_confirmation : "Confirm Password"
+  remember_me : "Remember me"
+  sign_up : "Sign up"
+  signup_complete : "Signup complete!"
+  signup_complete_and_do_login : "Signup complete! Please sign in to continue."
+  signup_complete_with_activation : "Thanks for signing up!  We're sending you an email with your activation code."
+  signup_problem : "For some reason your account couldn't be created.  See below."
+  not_signed_in: "Not signed in"
+  register: "Register"
+  access_denied: "Access Denied"
+  admin_access_denied: "Access Denied.  Please log in with an administrator account."
+  
+  # Invitation system
+  invitation_sent: "Thank you. Invitation is being sent. You have {{num_left}} invitations left."
+  already_registered: "is already registered"
+  reached_invitation_limit: "You have reached your limit of invitations to send."
+  invitation_signup: "Thank you, we will notify you when we accepting more sign ups."
+  email_sent: "Email is being sent"
+  
+  # "Dating" related
+  activity:
+    activity: "Activity"
+    activities: "Activities"
+    name: "Name"
+    duration: "Duration"
+    location: "Location"
+    instructions: "Instructions"
+  attribute:
+    attribute: "Badge"
+    attributes: "Badges"
+  attcategory:
+    attcategory: "Badge Category"
+    attcategories: "Badge Categories"

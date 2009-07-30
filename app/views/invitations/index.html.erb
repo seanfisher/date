@@ -1,0 +1,15 @@
+<h1>Listing invitations</h1>
+
+<table>
+  <tr>
+    <th>Sender</th>
+    <th>Recipient email</th>
+    <th>Sent</th>
+  </tr>
+
+<%= render @invitations %>
+</table>
+
+<br />
+
+<%= link_to 'New invitation', new_invitation_path %>

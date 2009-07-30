@@ -1,0 +1,13 @@
+  <tr style='<%= "background: green;" if invitation.used? %>'>
+    <td><%= inv_sender(invitation) %></td>
+    <td><%=h invitation.recipient_email %></td>
+    <td><%= inv_time_sent_ago(invitation) %></td>
+	<%
+		unless invitation.sent?
+	%>
+		<td><%= link_to 'Invite them', {:controller => :invitations, :action => :send_invite, :id => invitation.id} %></td>
+	<% else %>
+		<td><%= link_to 'Send again', {:controller => :invitations, :action => :send_invite, :id => invitation.id}, :confirm => 'This person has already received an email. Send again?'%></td>
+	<% end %>
+    <td><%= link_to image_tag('interface/icons/delete.png', :alt => "Remove", :class => :icon), invitation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

@@ -1,0 +1,26 @@
+<h1>Listing <%=t "attribute.attributes"%></h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+	<th>Data Type</th>
+	<th>Data</th>
+	<th>Category</th>
+  </tr>
+
+<% for actattribute in @actattributes %>
+  <tr>
+    <td><%=h actattribute.title %></td>
+	<td><%=h actattribute.data_type %></td>
+	<td><%=h actattribute.data %></td>
+	<td><%=h actattribute.attcategory.name if actattribute.attcategory %></td>
+    <td><%= link_to 'Show', actattribute %></td>
+    <td><%= link_to 'Edit', edit_actattribute_path(actattribute) %></td>
+    <td><%= link_to 'Destroy', actattribute, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to I18n.t(:New)+' '+I18n.t("attribute.attribute"), new_actattribute_path %>

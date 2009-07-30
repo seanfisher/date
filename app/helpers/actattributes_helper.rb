@@ -1,0 +1,2 @@
+module ActattributesHelper
+end

@@ -1,0 +1,16 @@
+<h1>Editing <%=t "attcategory.attcategory"%></h1>
+
+<% form_for(@attcategory) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @attcategory %> |
+<%= link_to 'Back', attcategories_path %>

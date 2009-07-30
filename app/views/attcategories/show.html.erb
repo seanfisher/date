@@ -1,0 +1,16 @@
+<p>
+  <b>Name:</b>
+  <%=h @attcategory.name %>
+</p>
+
+
+<p>
+  <b><%=t "attribute.attributes"%> in this category:</b><br />
+  <% for attribute in @attcategory.actattributes %>
+    <%=h attribute.title %><br />
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_attcategory_path(@attcategory) %> |
+<%= link_to 'Back', attcategories_path %>

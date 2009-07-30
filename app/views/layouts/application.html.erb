@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><%=t :site_title -%> - <%= yield(:title) || controller.action_name.capitalize -%></title>
+        <%= stylesheet_link_tag "global", "themes/"+@theme_stylesheet %>
+		<%= javascript_include_tag :defaults, 'curvycorners' %>
+    </head>
+    <body>
+    	<div id="header">
+    		<span id="site_title"><%= link_to image_tag("interface/logo.png", {:alt=>I18n.t(:site_title), :title=>I18n.t(:site_title)}), :controller => "home" %></span>
+			<span id="header_bar"><%= login_logout_link -%></span>
+		</div>
+		
+		<%= render :partial => 'common_partials/admin_bar' if is_admin? -%>
+	 	<% flash.each do |key, msg| -%>
+		 	<%= content_tag :div, msg, {:id => key, :class => :message_bar} -%>
+		<% end -%>
+		
+		<div class="content_top"></div>
+		<div id="outside">
+		    <div id="content">
+		    	<%= render :partial => 'common_partials/navbar' -%>
+				<hr />
+				
+				<% # This is the actual "yield" method (using sub_layouts)-%>
+	 			<% if controller.methods.include?("sub_layout") -%><%= render :partial=>"layouts/#{controller.sub_layout}" -%><% else -%><%= yield-%><% end -%>
+			
+			</div>
+	
+			<div id="footer">
+				<%= render :partial=>"common_partials/footer" %>
+			</div>
+		</div>
+		
+		<% if RAILS_ENV == "development" -%>
+		  <%= render :partial => 'common_partials/developer_info' -%>
+		<% end -%>
+    </body>
+</html>

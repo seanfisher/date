@@ -1,0 +1,25 @@
+<% title "Login" %>
+
+<div id="col1">
+	<h1><%= I18n.t(:log_in) %></h1>
+	
+	<% form_tag session_path do -%>
+	<p><%= label_tag 'login', I18n.t(:login) %><br />
+	<%= text_field_tag 'login', @login %></p>
+	
+	<p><%= label_tag 'password', I18n.t(:password) %><br/>
+	<%= password_field_tag 'password', nil %></p>
+	
+	<p><%= label_tag 'remember_me', I18n.t(:remember_me) %>
+	<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+	
+	<p><%= submit_tag I18n.t(:log_in), :class => :button %></p>
+	<% end -%>
+</div>
+
+<div id="col2">
+	<p>Don't have an account?<br />
+	You'll need an invitation to join.<br /><br /><%= link_to "<div class='big_button'>Request one</div>", {:controller => :home, :action => :private_beta}, {:class=>:big_button_link} %>
+	<%#= link_to I18n.t(:register) + '!', signup_path %>
+	</p>
+</div>

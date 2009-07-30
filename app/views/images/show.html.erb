@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @image.name %>
+</p>
+
+<p>
+  <b>Image Filename:</b>
+  <%=h @image.image_filename %>
+</p>
+
+<p>
+  <b>Image Width:</b>
+  <%=h @image.image_width %>
+</p>
+
+<p>
+  <b>Image Height:</b>
+  <%=h @image.image_height %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

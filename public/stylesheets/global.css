@@ -1,0 +1,249 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+/*
+	background: #f9fffd url('../images/interface/bodybg.png') repeat-x top;
+*/
+	text-align: center;
+	font-family: Geneva, Verdana, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+a, a:active, a:visited, a:focus, a:link {
+	color: #59675d;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #59675d;
+}
+a img {
+	border: 0;
+}
+#header {
+	width: 760px;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	font-family: Geneva, Verdana, Arial, sans-serif;
+	overflow: auto;
+}
+#header a img{
+	border: none;
+}
+#header a, #header a:active, #header a:visited, #header a:focus, #header a:link {
+	color: white;
+	text-decoration: none;
+}
+#header a:hover {
+	text-decoration: underline;
+	color: #ddd7be;
+}
+#header #site_title {
+	float: left;
+	width: 350px;
+}
+#header #header_bar {
+	float: right;
+	width: 250px;
+	padding: 5px 5px 5px 5px;
+	text-align: right;
+}
+.header_welcome {
+	color: white;
+	font-size: .7em;
+}
+#navbar_ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: auto;
+}
+.navbar_item {
+	list-style-type: none;
+	display: inline;
+	padding-left: 0em;
+}
+.navbar_item span {
+	padding-left: 1.2em;
+}
+.navbar_item a {
+	padding-left: 0em;
+}
+.navbar_item a:hover {
+	text-decoration: none;
+	background: url('../images/interface/navarrow.png') no-repeat;
+	background-position: 5px 5px;
+	margin-left: -1.2em;
+	padding-left: 1.2em;
+}
+#content {
+	width: 750px;
+	min-height: 300px;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2em;
+	padding-top: 1em;
+	padding-right: 1em;
+	margin-top: 0px;
+}
+#content h1 {
+	font-family: Geneva, Verdana, Arial, sans-serif;
+	color: #4e909e;
+	margin: 0;
+	padding: 0;
+}
+#content #col1 {
+	float: left;
+	width: 45%;
+}
+#content #col2 {
+	float: right;
+	width: 45%;
+	margin: 2.5em 2em 1em 0;
+	text-align: center;
+}
+#content .hidden_link a {
+	color: inherit;
+}
+#content .hidden_link a:hover {
+	text-decoration: none;
+	cursor: default;
+}
+.button {
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.1em;
+	padding: .2em;
+}
+a.big_button_link {
+	text-align: center;
+	font-size: 1.5em;
+}
+.big_button {
+	width: 7em;
+	padding: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+#quick_search {
+	float:right;
+	margin-top: 0em;
+	padding: 1em;
+	color: white;
+}
+#sidebar {
+	background: black;
+	padding: .5em 1em;
+	min-height: 200px;
+	width: 250px;
+	color: white;
+	float: right;
+}
+#sidebar p {
+	margin-top: .5em;
+}
+#sidebar a, #sidebar a:active, #sidebar a:visited, #sidebar a:focus, #sidebar a:link {
+	color: white;
+}
+#whereitsat {
+	padding-right: 310px;
+}
+#whereitsat p {
+	margin-top: .6em;
+}
+.message_bar {
+	padding: 7px 5px 5px 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	border-style: dashed;
+	border-width: 2px;
+	width: 745px;
+}
+#error {
+	background-color: #ffbecc;
+	border-color: red;
+}
+#warning {
+	background-color: #fff6ca;
+	border-color: yellow;
+}
+#notice {
+	background-color: #deffe3;
+	border-color: green;
+}
+#admin_bar {
+	background-color: #ffcdfb;
+}
+#admin_bar span {
+	padding-left: 2px;
+}
+.fieldWithErrors {
+  padding: 1px;
+  background-color: red;
+  display: table;
+}
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+.rounded {
+	-moz-border-radius-topleft: 2ex;
+	-moz-border-radius-topright: 2ex;
+	-moz-border-radius-bottomleft: 2ex;
+    -moz-border-radius-bottomright: 2ex;
+    -webkit-border-top-left-radius: 2ex;
+	-webkit-border-top-right-radius: 2ex;
+	-webkit-border-bottom-left-radius: 2ex;
+    -webkit-border-bottom-right-radius: 2ex;
+}
+#footer {
+	text-align: right;
+	font-size: .8em;
+	color: black;
+	width: 740px;
+	padding: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+}
+#footer a, #footer a:active, #footer a:visited, #footer a:focus, #footer a:link {
+	color: #999;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #000;
+}
+.icon {
+	width: 25px;
+}

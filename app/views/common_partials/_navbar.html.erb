@@ -1,0 +1,4 @@
+<ul id="navbar_ul">
+	<li class="navbar_item"><span><%= link_to_unless_current I18n.t(:home), :controller => :home %></span></li>
+	<li class="navbar_item"><span><%= link_to_unless_current I18n.t(:"activity.activities"), activities_path -%></span></li>
+</ul>

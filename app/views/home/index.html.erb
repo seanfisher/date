@@ -1,0 +1,4 @@
+<h3 class="hidden_link"><%=link_to_remote "Featured Activity", :update => :feat_activity, :url => {:action => :index} %></h3>
+<div id="feat_activity">
+	<%= render :partial => "activity_medium", :locals => { :activity => @featured_activity} %>
+</div>

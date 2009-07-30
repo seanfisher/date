@@ -1,0 +1,22 @@
+<p>
+  <b>Title:</b>
+  <%=h @actattribute.title %>
+</p>
+
+<p>
+  <b>Data Type:</b>
+  <%=h @actattribute.data_type %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%=h @actattribute.data %>
+</p>
+
+<p>
+	<b>Category</b><br />
+	<%=h @actattribute.attcategory.name if @actattribute.attcategory %>
+</p>
+
+<%= link_to 'Edit', edit_actattribute_path(@actattribute) %> |
+<%= link_to 'Back', actattributes_path %>

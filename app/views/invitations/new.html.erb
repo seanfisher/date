@@ -1,0 +1,20 @@
+<h1>New invitation</h1>
+
+<% form_for(@invitation) do |f| %>
+  <%= f.error_messages %>
+  <p>
+  	<%= f.label :recipient_name, "Friend's name" %><br />
+	<%= f.text_field :recipient_name %>
+  </p>
+  <p>
+    <%= f.label :recipient_email, "Friend's email address" %><br />
+    <%= f.text_field :recipient_email %>
+  </p>
+  <p>
+  	<%= f.label :personal_message, "Write a personal message" %><br />
+	<%= f.text_area :personal_message, :size=>'30x5' %>
+  </p>
+  <p>
+    <%= f.submit 'Invite!' %>
+  </p>
+<% end %>

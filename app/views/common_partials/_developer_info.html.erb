@@ -1,0 +1,26 @@
+<a id="DevInShow" href="#" 
+   style="font-size:small;position:absolute;bottom:10px;right:10px"
+   onclick="$('DevInfo').show(); $('DevInShow').hide();">
+ Show Developer Info</a>
+
+<div id="DevInfo" 
+     style="background:white;padding: 5px;
+            border:10px solid red;position:absolute;
+            top:0px;left:0px;display:none;text-align:left;">
+
+  <a href="#" 
+     onclick="$('DevInfo').hide(); $('DevInShow').show();">
+  Hide Developer Info</a>
+
+  <h1>Params</h1>
+  <pre>
+    <%= params.to_yaml %>
+  </pre>
+  <h1>Session</h1>
+  <pre>
+    <%= session.to_yaml %>
+  </pre>
+  <a href="#" 
+        onclick="$('DevInfo').hide();$('DevInShow').show();">
+  Hide Developer Info</a>
+</div>

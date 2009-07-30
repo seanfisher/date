@@ -1,0 +1,25 @@
+<h1>New image</h1>
+
+<% form_for(@image, :html => {:multipart => :true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  	<%= f.label "Upload image" %>
+	<%= f.file_field :image_file %>
+	or URL: <%= f.text_field :image_file_url%>
+	<%= f.hidden_field :image_file_temp %>
+  </p>
+  <p>
+  	<b>Uploaded Image:</b><br />
+  	<%= embedded_image_tag(@image.operate { |img| img.resize 100 }) if @image.has_image? %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', images_path %>

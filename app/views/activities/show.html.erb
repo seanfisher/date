@@ -1,0 +1,28 @@
+<p>
+  <b><%=t :"activity.name" %>:</b>
+  <%=h @activity.title %>
+</p>
+
+<p>
+	<b><%=t :"activity.duration" %>:</b>
+	<%= @activity.duration_in_string %>
+</p>
+
+<p>
+	<b><%=t :"activity.location" %>:</b>
+	<%=h @activity.location %>
+</p>
+
+<p>
+	<b><%=t :"activity.instructions" %>:</b><br />
+	<%= simple_format( h @activity.instructions) -%>
+
+<p>
+  <b><%=t :"activity.activity" %> <%=t "attribute.attributes" %>:</b><br />
+  <% for attribute in @activity.actattributes %>
+    <%=h attribute.title + " - " + attribute.data %><br />
+  <% end %>
+</p>
+
+<% if logged_in? %><%= link_to 'Edit', edit_activity_path(@activity) %> |<% end%>
+<%= link_to 'Back', activities_path %>

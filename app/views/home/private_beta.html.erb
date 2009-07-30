@@ -1,0 +1,11 @@
+<p>We are in private beta. Put in your email address and we'll send you an invitation when we're ready for you.</p>
+
+<% form_for :invitation, @invitation, :url => {:controller => :home, :action => :private_beta} do |f| %>
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :recipient_email, "Your Email" %>
+		<%= f.text_field :recipient_email %>
+		<%= hidden_field_tag :private_beta, "true" %>
+		<%= f.submit 'Submit' %>
+	</p>
+<% end %>

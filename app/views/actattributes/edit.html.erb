@@ -1,0 +1,35 @@
+<h1>Editing Attribute</h1>
+
+<% form_for(@actattribute) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+  	<%= f.label :data_type %><br />
+	<%= f.text_field :data_type%>
+  </p>
+  
+  <p>
+  	<%= f.label :data %><br />
+	<%= f.text_field :data %>
+  </p>
+
+  <p>
+  	Category<br />
+  	<% for category in Attcategory.find(:all) %>
+	 <%= radio_button_tag "actattribute[attcategory_id]", category.id, category.actattributes.include?(@actattribute) %>
+	 <%= f.label "attcategory_id_#{category.id}", category.name %>
+	<% end %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @actattribute %> |
+<%= link_to 'Back', actattributes_path %>

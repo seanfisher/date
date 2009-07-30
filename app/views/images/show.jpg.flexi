@@ -1,0 +1,5 @@
+@image.operate do |image|
+  image.resize '600'
+  image.border :size => 10, :color => '#fff'
+  image.shadow
+end

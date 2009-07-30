@@ -1,0 +1,5 @@
+<% if current_user && current_user.invitation_limit > 0 %>
+  <%= link_to 'Send invitation', new_invitation_path %>
+  (<%=current_user.invitation_limit%> left)
+<% end %>
+&nbsp;

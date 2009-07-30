@@ -1,0 +1,28 @@
+<div id="quick_search" class="rounded">
+	<% form_tag request.path, :method => 'get' do %>
+		<% content_tag :label do %>
+			<%=t "quick_search" -%>:
+			<%= text_field_tag I18n.t("search"), params[:search] %>
+		<% end %>
+	<% end %>
+</div>
+
+<h1>Listing <%=t :"activity.activities" %></h1>
+<% if params[:search] %>
+	<div class="rounded" style="margin-top:1em;margin-bottom:1em;">Searching for <strong><%=h params[:search]%></strong>. <%= link_to "Show all", activities_path%></div>
+<% end %>
+<table>
+  <tr>
+    <th><%=t :"activity.name" %></th>
+	<th><%=t :"activity.duration" %></th>
+	<th><%=t :"activity.location" %></th>
+  </tr>
+
+  <%= render :partial => 'activity_small', :collection => @activities, :current_user => current_user %>
+</table>
+
+<%= will_paginate @activities -%>
+
+<br />
+
+<%= link_to 'New '+I18n.t(:"activity.activity"), new_activity_path %>

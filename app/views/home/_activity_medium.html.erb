@@ -1,0 +1,2 @@
+<%= link_to activity.title, activity %><br />
+<%= simple_format(truncate( h(activity.instructions), :length => 180, :omission => "... ("+link_to("read more", activity)+")")) %>

@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color: #5C5426;">
+
+<style type="text/css">body,.backgroundTable{background-color:#FFFFCC;}#contentTable{border:0px none #000000;margin-top:10px;}.headerTop{background-color:#D6D4C8;border-top:0px none #000000;border-bottom:0px none #FFFFFF;text-align:center;padding:0px;}.adminText{font-size:10px;color:#663300;line-height:200%;font-family:Verdana;text-decoration:none;}.headerBar{background-color:#FFFFFF;border-top:0px none #333333;border-bottom:0px none #FFFFFF;padding:0px;}.headerBarText{color:#333333;font-size:30px;font-family:Verdana;font-weight:normal;text-align:left;}.title{font-size:24px;font-weight:bold;color:#8b0000;font-family:Georgia;line-height:150%;}.subTitle{font-size:14px;font-weight:bold;color:#000000;font-style:normal;font-family:Georgia;}.defaultText{font-size:12px;color:#333333;line-height:150%;font-family:Verdana;background-color:#FFFFFF;padding:20px;border:0px none #FFFFFF;}.footerRow{background-color:#5F5729;border-top:0px none #FFFFFF;padding:20px;}.footerText{font-size:10px;color:#ffffff;line-height:100%;font-family:Verdana;}a,a:link,a:visited{color:#800000;text-decoration:underline;font-weight:normal;}.headerTop a{color:#663300;text-decoration:none;font-weight:normal;}.footerRow a{color:#ffffff;text-decoration:underline;font-weight:normal;}body,.backgroundTable{background-color:#5C5426;}</style>
+
+<table width="100%" cellspacing="0" class="backgroundTable" style="background-color: #5C5426;">
+<tr>
+<td valign="top" align="center">
+
+<table id="contentTable" cellspacing="0" cellpadding="0" width="600" style="border: 0px none #000000;margin-top: 10px;"><tr><td>
+<table width="600" cellpadding="0" cellspacing="0">
+<tr>
+<td class="headerTop" align="right" style="background-color: #5c5426;border-top: 0px none #000000;border-bottom: 0px none #FFFFFF;text-align: center;padding: 0px;"><div class="adminText" style="font-size: 10px;color: #000;line-height: 200%;font-family: Verdana;text-decoration: none;">
+    Add datenightout.team@gmail.com into your address book to ensure our messages aren't marked as junk.
+</div></td>
+</tr>
+ 
+<tr>
+<td class="headerBar" style="background-color: #FFFFFF;border-top: 0px none #333333;border-bottom: 0px none #FFFFFF;padding: 0px;"><div class="headerBarText" style="color: #333333;font-size: 30px;font-family: Verdana;font-weight: normal;text-align: left;"><%=image_tag "support/mailheader.jpg", :size => "596.94" %></div></td>
+</tr>
+
+
+</table>
+
+
+<table width="600" cellpadding="20" cellspacing="0" class="bodyTable">
+<tr>
+<td valign="top" align="left" class="defaultText" style="font-size: 12px;color: #333333;line-height: 150%;font-family: Verdana;background-color: #FFFFFF;padding: 20px;border: 0px none #FFFFFF;">
+    <span class="title" style="font-size: 24px;font-weight: bold;color: #8b0000;font-family: Georgia;line-height: 150%;">Dear <%=@invitation.recipient_name%>,</span><br>
+	<p>
+		<%= @sender_name %> has invited you to try <%=t :site_title %>, a new website where you can share your fun date ideas and get ideas in return. <%=@sender_name%> said:
+		<br />
+		<blockquote><%=simple_format(h(@invitation.personal_message))%></blockquote>
+	</p>
+	<p><%= link_to "<strong>Signup</strong>", @signup_url %> for this useful website!</p>
+    
+	<span class="subTitle" style="font-size: 14px;font-weight: bold;color: #000000;font-style: normal;font-family: Georgia;">About <%=t :site_title %>:</span><br>
+    <p>Ever asked somebody on a date, put down the phone, and then turned to your buddy and said, "oh man!  Now we've got to think of something to do!"</p>
+	<p><%=t :site_title %> is a database full of fun date ideas.  You can narrow your ideas down by price range, age range, location, and more!</p>
+	<p>When you've come up with a great idea, share it with the world!  Let others try it out, rate it, give it feedback, and love it.</p>
+	<p>We're currently in beta, so feel free to leave us feedback.  Wouldn't it be cool if you suggested changing the color of a link and came back the next day and it was changed?</p>
+</td>
+</tr>
+
+<tr>
+<td class="footerRow" align="left" valign="top" style="background-color: #5F5729;border-top: 0px none #FFFFFF;padding: 20px;">
+<div class="footerText" style="font-size: 10px;color: #ffffff;line-height: 100%;font-family: Verdana;"><strong>Our mailing address is:</strong><br>     <div class="vcard"><span class="fn org">Date Night Out</a><div class="adr"><div class="street-address">381 W. 500 S.</div><span class="locality">Hurricane</span>, <span class="region">UT</span>  <span class="postal-code">84737</span></div><br><br>     <em>Copyright (C) 2009 Date Night Out All rights reserved.</em></div>
+
+</td>
+</tr>
+
+</table>
+
+</td></tr></table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

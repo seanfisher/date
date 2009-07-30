@@ -1,0 +1,57 @@
+<h1>Editing <%=t :"activity.activity" %></h1>
+
+<% form_for(@activity) do |f| -%>
+  <%= f.error_messages -%>
+  <fieldset>
+  	  <legend><h3>General Information</h3></legend>
+	  <p>
+	    <%= f.label :title, I18n.t(:"activity.name") -%><br />
+	    <%= f.text_field :title -%>
+	  </p>
+	  
+	  <p>
+		<select name="activity_hours">
+			<% for i in 0..10 -%>
+				<option value="<%=i-%>"<%= " selected=\"selected\"" if @activity.duration_in_hours == i -%>><%=i-%></option>
+			<% end -%>
+		</select>
+		<%= f.label :hours, I18n.t(:hours) -%>,
+		<select name="activity_minutes">
+			<% 0.step(55, 5) do |i| -%>
+				<option value="<%=i-%>"<%= " selected=\"selected\"" if (@activity.duration_in_minutes % 60) == i -%>><%=i-%></option>
+			<% end -%>
+		</select>
+		<%= f.label :minutes, I18n.t(:minutes) -%>
+	  </p>
+	  
+	  <p>
+	  	<%= f.label :location, I18n.t(:"activity.location") -%><br />
+		<%= f.text_field :location -%>
+	  </p>
+	  
+	  <p>
+	  	<%= f.label :instructions, I18n.t(:"activity.instructions") -%><br />
+		<%= f.text_area :instructions -%>
+	  </p>
+  </fieldset>
+  <fieldset>
+  	  <legend><h3><%=t :"attribute.attributes" %></h3></legend>
+		  <% for category in @attcategories -%>
+		    <% if !category.actattributes.empty? -%>
+				<fieldset id="<%=category.id-%>">
+					<legend><%=category.name-%></legend>
+					<% for attribute in category.actattributes -%>
+						<%= check_box_tag "activity[actattribute_ids][]", attribute.id, @activity.actattributes.include?(attribute) -%>
+						<%= attribute.title -%> - <%= attribute.data -%><br />
+					<% end -%>
+				</fieldset>
+			<% end -%>
+		  <% end -%>
+  </fieldset>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @activity %> |
+<%= link_to 'Back', activities_path %>

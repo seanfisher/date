@@ -1,0 +1,2 @@
+module AttcategoriesHelper
+end
