@@ -17,6 +17,6 @@ body {
 .big_button {
 	background: url('../../images/interface/themes/drive_in/bodybg.png') repeat-x top;
 }
-#quick_search {
+.quick_search {
 	background: url('../../images/interface/themes/drive_in/bodybg.png') repeat-x top;
 }

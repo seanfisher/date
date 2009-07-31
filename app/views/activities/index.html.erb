@@ -1,6 +1,6 @@
-<div id="quick_search" class="rounded">
+<div class="rounded quick_search">
 	<% form_tag request.path, :method => 'get' do %>
-		<% content_tag :label do %>
+		<% content_tag :label, :for => :search do %>
 			<%=t "quick_search" -%>:
 			<%= text_field_tag I18n.t("search"), params[:search] %>
 		<% end %>

@@ -19,9 +19,7 @@
 
 <p>
   <b><%=t :"activity.activity" %> <%=t "attribute.attributes" %>:</b><br />
-  <% for attribute in @activity.actattributes %>
-    <%= badge(attribute) %>
-  <% end %>
+  <%= render @actattributes %>
 </p>
 
 <% if logged_in? %><%= link_to 'Edit', edit_activity_path(@activity) %> |<% end%>

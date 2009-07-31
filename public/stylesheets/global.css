@@ -158,7 +158,7 @@ a.big_button_link:hover {
 	margin-right: auto;
 	color: white;
 }
-#quick_search {
+.quick_search {
 	float:right;
 	margin-top: 0em;
 	padding: 1em;

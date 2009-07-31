@@ -19,6 +19,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1.xml
   def show
     @activity = Activity.find(params[:id])
+    @actattributes = @activity.actattributes
 
     respond_to do |format|
       format.html # show.html.erb

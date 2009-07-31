@@ -1,4 +1,12 @@
-<p><%= link_to "See dating activities ", activities_path %></p>
+<div class="rounded quick_search">
+	<% form_tag activities_path, :method => 'get' do %>
+		<% content_tag :label, :for => :search do %>
+			Search for fun activities:
+		<% end %>
+			<%= text_field_tag I18n.t("search"), params[:search] %>
+	<% end %>
+</div>
+<br clear="all" />
 
 <% if current_user && current_user.invitation_limit > 0 %>	
 	<p>

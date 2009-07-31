@@ -1,3 +1,5 @@
 <h1><%=t "attribute.attributes" %></h1>
 
 <%= render :partial => "edit_badges", :attcategories => @attcategories%>
+
+<%=link_to "Continue to your activity >>", activity_path(@activity)%>
