@@ -1,6 +1,8 @@
 class ActattributesController < ApplicationController
   before_filter :admin_required
   
+  caches_page :show
+  
   # GET /actattributes
   # GET /actattributes.xml
   def index
@@ -16,10 +18,11 @@ class ActattributesController < ApplicationController
   # GET /actattributes/1.xml
   def show
     @actattribute = Actattribute.find(params[:id])
-
+    
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @actattribute }
+      #format.html # show.html.erb
+      format.png if @actattribute.has_image? # show the badge image
+      #format.xml  { render :xml => @actattribute }
     end
   end
 
@@ -64,6 +67,7 @@ class ActattributesController < ApplicationController
     respond_to do |format|
       if @actattribute.update_attributes(params[:actattribute])
         flash[:notice] = 'Attribute was successfully updated.'
+        expire_page(badge_path(@actattribute))
         format.html { redirect_to(@actattribute) }
         format.xml  { head :ok }
       else

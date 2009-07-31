@@ -20,7 +20,7 @@
 <p>
   <b><%=t :"activity.activity" %> <%=t "attribute.attributes" %>:</b><br />
   <% for attribute in @activity.actattributes %>
-    <%=h attribute.title + " - " + attribute.data %><br />
+    <%= badge(attribute) %>
   <% end %>
 </p>
 

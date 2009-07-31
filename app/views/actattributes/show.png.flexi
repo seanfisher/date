@@ -1,0 +1,3 @@
+@actattribute.operate do |image|
+  image
+end

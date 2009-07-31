@@ -1,0 +1,4 @@
+if @saved
+  # apply the correct style based on @switch
+  page << "if ($('actattribute_#{@actattribute.id}').hasClassName('act_included')){$('actattribute_#{@actattribute.id}').removeClassName('act_included');}else{$('actattribute_#{@actattribute.id}').addClassName('act_included');};"
+end

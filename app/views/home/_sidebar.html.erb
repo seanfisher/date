@@ -1,5 +1,9 @@
-<% if current_user && current_user.invitation_limit > 0 %>
-  <%= link_to 'Send invitation', new_invitation_path %>
-  (<%=current_user.invitation_limit%> left)
+<p><%= link_to "See dating activities ", activities_path %></p>
+
+<% if current_user && current_user.invitation_limit > 0 %>	
+	<p>
+		Like <%=t :site_title%>?<br />
+  		<%= link_to 'Invite a friend', new_invitation_path %>
+  		(<%=current_user.invitation_limit%> left)
+	</p>
 <% end %>
-&nbsp;

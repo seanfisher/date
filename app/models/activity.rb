@@ -72,5 +72,8 @@ class Activity < ActiveRecord::Base
     find(ids[rand(ids.size)][self.primary_key].to_i) unless ids.blank?
   end
 
+  def toggle(actattribute)
+    self.actattributes.include?(actattribute) ? self.actattributes.delete(actattribute) : self.actattributes.push(actattribute)
+  end
 
 end

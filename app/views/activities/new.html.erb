@@ -35,17 +35,7 @@
   
   <p>
 	  <h2><%=t "attribute.attributes" %></h2><br />
-	  <% for category in @attcategories -%>
-	    <% if !category.actattributes.empty? -%>
-			<fieldset id="<%=category.id-%>">
-				<legend><%=category.name-%></legend>
-				<% for attribute in category.actattributes -%>
-					<%= check_box_tag "activity[actattribute_ids][]", attribute.id -%>
-					<%= attribute.title -%> - <%= attribute.data -%><br />
-				<% end -%>
-			</fieldset>
-		<% end -%>
-	  <% end -%>
+	  <%= render :partial => "edit_badges", :attcategories => @attcategories%>
   </p>
 
   <p>

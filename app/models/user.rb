@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     self.invitation = Invitation.find_by_token(token)
   end
   
+  def preferred_theme
+    "drive_in" # only theme right now :)
+  end
+  
   # Activates the user in the database.
   def activate!
     @activated = true

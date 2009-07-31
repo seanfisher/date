@@ -1,21 +1,27 @@
 <h1>Editing Attribute</h1>
 
-<% form_for(@actattribute) do |f| %>
+<% form_for(@actattribute, :html => {:multipart => :true}) do |f| %>
   <%= f.error_messages %>
 
+  <p>
+  	<%= badge(@actattribute) %>
+  </p>
+  
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
   
   <p>
-  	<%= f.label :data_type %><br />
-	<%= f.text_field :data_type%>
-  </p>
-  
-  <p>
-  	<%= f.label :data %><br />
-	<%= f.text_field :data %>
+  	<%= f.label :image_file, "Upload new badge: " %>
+	<%= f.file_field :image_file %>
+	<%= f.hidden_field :image_file_temp %>
+	<% if @actattribute.has_image? %>
+	  <p>
+	  	Uploaded Image:<br />
+	  	<%= embedded_image_tag(@actattribute.operate { |img| img.resize 100 }) %>
+	  </p>
+	<% end %>
   </p>
 
   <p>

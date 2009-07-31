@@ -12,12 +12,11 @@ body {
 	padding: 0;
 }
 a, a:active, a:visited, a:focus, a:link {
-	color: #59675d;
+	color: #e48012;
 	text-decoration: none;
 }
 a:hover {
 	text-decoration: underline;
-	color: #59675d;
 }
 a img {
 	border: 0;
@@ -57,6 +56,21 @@ a img {
 	color: white;
 	font-size: .7em;
 }
+#outside {
+	width: 100%;
+	min-width: 802px;
+	padding: 0 0 325px 0;
+	min-height: 600px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-top: -300px;
+}
+#navbar {
+	margin: 0 0 1em -1em;
+	padding: 1em 0 0 0;
+}
 #navbar_ul {
 	margin: 0;
 	padding: 0;
@@ -81,6 +95,11 @@ a img {
 	margin-left: -1.2em;
 	padding-left: 1.2em;
 }
+.content_top {
+	margin: 0 auto;
+	padding: 0;
+	width: 802px;
+}
 #content {
 	width: 750px;
 	min-height: 300px;
@@ -88,15 +107,18 @@ a img {
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 2em;
-	padding-top: 1em;
-	padding-right: 1em;
+	padding-top: 0;
+	padding-right: 1.2em;
 	margin-top: 0px;
+	position: relative;
+	z-index: 50;
 }
 #content h1 {
-	font-family: Geneva, Verdana, Arial, sans-serif;
-	color: #4e909e;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #000;
 	margin: 0;
 	padding: 0;
+	font-size: 3em;
 }
 #content #col1 {
 	float: left;
@@ -126,6 +148,9 @@ a.big_button_link {
 	text-align: center;
 	font-size: 1.5em;
 }
+a.big_button_link:hover {
+	text-decoration: none;
+}
 .big_button {
 	width: 7em;
 	padding: 1em;
@@ -140,18 +165,18 @@ a.big_button_link {
 	color: white;
 }
 #sidebar {
-	background: black;
 	padding: .5em 1em;
 	min-height: 200px;
+	margin-right: 5px;
 	width: 250px;
-	color: white;
+	color: black;
 	float: right;
+
 }
 #sidebar p {
 	margin-top: .5em;
 }
 #sidebar a, #sidebar a:active, #sidebar a:visited, #sidebar a:focus, #sidebar a:link {
-	color: white;
 }
 #whereitsat {
 	padding-right: 310px;
@@ -233,8 +258,6 @@ a.big_button_link {
 	color: black;
 	width: 740px;
 	padding: 10px;
-	margin-right: auto;
-	margin-left: auto;
 	margin-top: 10px;
 }
 #footer a, #footer a:active, #footer a:visited, #footer a:focus, #footer a:link {
@@ -246,4 +269,7 @@ a.big_button_link {
 }
 .icon {
 	width: 25px;
+}
+.act_included {
+	border: 3px solid green;
 }

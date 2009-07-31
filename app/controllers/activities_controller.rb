@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
-  before_filter :login_required, :only => ["new", "create", "edit", "update"]
-  before_filter :admin_required, :except => ["new", "index", "create", "show", "edit", "update"]
+  before_filter :login_required, :only => ["new", "create", "edit", "update", "toggle_actattribute"]
+  before_filter :admin_required, :except => ["new", "index", "create", "show", "edit", "update", "toggle_actattribute"]
+  after_filter :store_location, :only => ["new", "edit"]
   
   # GET /activities
   # GET /activities.xml
@@ -60,6 +61,25 @@ class ActivitiesController < ApplicationController
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @activity.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  # AJAX request to add/delete a badge
+  def toggle_actattribute
+    @activity = Activity.find(params[:id])
+    @actattribute = Actattribute.find_by_id(params[:actattribute])
+    @switch = !@activity.actattributes.include?(@actattribute)
+    
+    #the toggle function
+    @activity.toggle(@actattribute)
+    @saved = @activity.save
+    
+    respond_to do |format|
+      if request.xhr?
+        format.js
+      else
+        format.html { redirect_back_or_default(activities_path) }
       end
     end
   end

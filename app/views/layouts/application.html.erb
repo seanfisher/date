@@ -18,20 +18,16 @@
 		<% end -%>
 		
 		<div class="content_top"></div>
-		<div id="outside">
-		    <div id="content">
-		    	<%= render :partial => 'common_partials/navbar' -%>
-				<hr />
-				
-				<% # This is the actual "yield" method (using sub_layouts)-%>
-	 			<% if controller.methods.include?("sub_layout") -%><%= render :partial=>"layouts/#{controller.sub_layout}" -%><% else -%><%= yield-%><% end -%>
+	    <div id="content">
+	    	<%= render :partial => 'common_partials/navbar' -%>
 			
-			</div>
-	
-			<div id="footer">
-				<%= render :partial=>"common_partials/footer" %>
-			</div>
+			<% # This is the actual "yield" method (using sub_layouts)-%>
+ 			<% if controller.methods.include?("sub_layout") -%><%= render :partial=>"layouts/#{controller.sub_layout}" -%><% else -%><%= yield-%><% end -%>
+			
+			<br clear="all" />
+			<div id="footer"><%= render :partial=>"common_partials/footer" %></div>
 		</div>
+		<div id="outside"></div>
 		
 		<% if RAILS_ENV == "development" -%>
 		  <%= render :partial => 'common_partials/developer_info' -%>
