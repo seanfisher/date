@@ -21,7 +21,7 @@ class ActattributesController < ApplicationController
     
     respond_to do |format|
       #format.html # show.html.erb
-      format.png if @actattribute.has_image? # show the badge image
+      format.png # show the badge image
       #format.xml  { render :xml => @actattribute }
     end
   end
