@@ -1,5 +1,5 @@
 class ActattributesController < ApplicationController
-  before_filter :admin_required
+  before_filter :admin_required, :except => ["show"]
   
   caches_page :show
   
@@ -50,7 +50,7 @@ class ActattributesController < ApplicationController
     respond_to do |format|
       if @actattribute.save
         flash[:notice] = 'Attribute was successfully created.'
-        format.html { redirect_to(@actattribute) }
+        format.html { redirect_to(actattributes_path) }
         format.xml  { render :xml => @actattribute, :status => :created, :location => @actattribute }
       else
         format.html { render :action => "new" }
@@ -67,8 +67,8 @@ class ActattributesController < ApplicationController
     respond_to do |format|
       if @actattribute.update_attributes(params[:actattribute])
         flash[:notice] = 'Attribute was successfully updated.'
-        expire_page(badge_path(@actattribute))
-        format.html { redirect_to(@actattribute) }
+        expire_page(actattributes_path(@actattribute))
+        format.html { redirect_to(actattributes_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

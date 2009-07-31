@@ -7,6 +7,9 @@ class Activity < ActiveRecord::Base
   validates_numericality_of :duration, :greater_than => 0
   validates_presence_of :title
   
+  validates_presence_of :user_id
+  validates_associated :user
+  
 #  def duration(type="minute")
 #    case type
 #      when "hour"

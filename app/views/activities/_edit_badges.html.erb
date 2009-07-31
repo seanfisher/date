@@ -3,7 +3,6 @@
 		<fieldset id="<%=category.id-%>">
 			<legend><%=category.name-%></legend>
 			<% for attribute in category.actattributes -%>
-				<%#= check_box_tag "activity[actattribute_ids][]", attribute.id, @activity.actattributes.include?(attribute) -%>
 				<% tmpurl = @activity.actattributes.include?(attribute) ? badge(attribute, :id => "actattribute_#{attribute.id}", :class => "act_included") : badge(attribute, :id => "actattribute_#{attribute.id}") %>
 				<%= link_to_remote(tmpurl, {:url => {:controller => :activities, :action => :toggle_actattribute, :id => @activity, :actattribute => attribute}}, :href => url_for(:controller => :activities, :action => :toggle_actattribute, :id => @activity, :actattribute => attribute)) %><br />
 			<% end -%>

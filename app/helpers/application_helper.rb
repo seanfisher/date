@@ -7,7 +7,7 @@ module ApplicationHelper
   def badge(actattribute, more = {})
     format = more.include?(:format) ? more[:format] : :png
     more.delete(:format)
-    path = badge_path(actattribute, :format => format)
+    path = actattribute_path(actattribute, :format => format)
     alt = title = actattribute.title
     options = {:alt => alt, :title => title}.merge!(more) if more.is_a?(Hash)
     image_tag path, options

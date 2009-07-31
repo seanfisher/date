@@ -13,3 +13,4 @@ db/*.bkp
 *~
 index/**/*
 devel/**/*
+public/images/uploaded_images/**/*

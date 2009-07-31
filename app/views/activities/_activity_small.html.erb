@@ -2,6 +2,8 @@
 	<td><%= link_to(h(activity_small.title), activity_path(activity_small)) %></td>
 	<td><%=h activity_small.duration_in_string %></td>
 	<td><%=h activity_small.location %></td>
-	<% if logged_in? %><td><%= link_to 'Edit', edit_activity_path(activity_small) %></td><% end %>
-	<% if current_user && current_user.is_admin? %><td><%= link_to image_tag('interface/icons/delete.png', :class => "icon"), activity_small, :confirm => 'Are you sure?', :method => :delete %></td><% end %>
+	<% if (logged_in? && current_user == activity_small.user) || is_admin? %>
+		<td><%= link_to 'Edit', edit_activity_path(activity_small) %></td>
+		<td><%= link_to image_tag('interface/icons/delete.png', :class => "icon"), activity_small, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
 </tr>

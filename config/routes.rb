@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :attcategories
 
-  map.resources :actattributes
+  map.resources :actattributes, :as => "badges"
 
   map.resources :activities
   
@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
   
-  map.badge '/badge/:id.:format', :controller => 'actattributes', :action => 'show'
+  #map.badge '/badge/:id.:format', :controller => 'actattributes', :action => 'show'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'

@@ -34,10 +34,6 @@
 		<%= f.text_area :instructions -%>
 	  </p>
   </fieldset>
-  <fieldset>
-  	  <legend><h3><%=t :"attribute.attributes" %></h3></legend>
-	  <%= render :partial => "edit_badges", :attcategories => @attcategories%>
-  </fieldset>
   <p>
     <%= f.submit "Update" %>
   </p>

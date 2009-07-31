@@ -32,11 +32,6 @@
   	<%= f.label :instructions, I18n.t(:"activity.instructions") -%><br />
 	<%= f.text_area :instructions -%>
   </p>
-  
-  <p>
-	  <h2><%=t "attribute.attributes" %></h2><br />
-	  <%= render :partial => "edit_badges", :attcategories => @attcategories%>
-  </p>
 
   <p>
     <%= f.submit "Create" -%>
